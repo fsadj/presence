@@ -180,4 +180,4 @@ apps/test0/           (规划并入)visionOS 工程:VRM 管线 + blendshape 驱�
 
 **硬件**:RTX Pro 6000 96GB 工作站(常驻大脑)+ M1 Max 32GB(编排/渲染)+ Vision Pro,10GbE 局域网,全本地、全隐私。
 
-**联系**:【GitHub 用户名 / 邮箱】
+**联系**:https://github.com/fsadj
