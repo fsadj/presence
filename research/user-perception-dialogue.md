@@ -46,7 +46,7 @@
 - **OS-Atlas**(OS-Copilot,ICLR2025,arXiv:2410.23218,330+ 引)—GUI grounding 基础动作模型,接受任意图尺寸。
 - **SeeClick**(ACL2024,596 引)—视觉 GUI grounding,创 ScreenSpot 基准。
 - **GUI-Actor**(微软,NeurIPS2025)—**Qwen2.5-VL** 骨干上坐标无关 grounding;**GUI-G1**(NeurIPS2025)R1 式 RL grounding。**Qwen2.5-VL 是主导骨干**—单个 Qwen2.5-VL-72B(装得下 96GB)同时给你屏幕理解+通用视觉。
-- **Claude/GPT computer-use** API 专有替代(不自托管),质量天花板参考。
+- **GPT 类 computer-use** API 专有替代(不自托管),质量天花板参考。
 - **改造模式(关键架构洞见)**:屏幕 VLM**周期(每隔几秒)+ 活动变化触发**(切窗、构建事件、空闲超时)运行,产紧凑**活动 token**("VSCode 调 Python,42 行报错"/"看文档"/"空闲 3 分")注入对话上下文—*非每帧*。这保持 VLM 成本可预测,命中 <500ms 对话预算。
 
 ### (c) 让角色物理地看屏幕
