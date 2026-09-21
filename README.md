@@ -3,7 +3,7 @@
 **真实房间里的具身 AI 陪伴角色(Apple Vision Pro)**
 
 > 大脑 = 具身推理 LLM,小脑 = 连续动作 VLA(π0/GR00T 范式),眼与耳 = Vision Pro 传感器。
-> 她感知你的真实房间与屏幕,跨会话记住一切,坐在你**真实的**椅子上。
+> 她感知你的真实房间与屏幕,跨会话记住一切,坐在你真实的椅子上。
 
 **为什么值得做**:目前没有任何系统同时具备 AR 空间 + 真实房间 grounding + 跨会话持久记忆 + 真实家具 affordance(坐/躺/趴)+ 屏幕感知 + VLA 锚定动作。最接近的两者各缺一半——SOLAMI(CVPR'25,端到端社交 VLA,但环境是 VR 合成)与阿里 MNN-TaoAvatar(Vision Pro 已有 90fps demo,但无真实房间感知)。逐项对比见 `research/competitive-positioning.md`。
 
@@ -46,16 +46,16 @@
 
 ---
 
-## 现在真实跑到哪(2026-09)
+## 当前进度(2026-09)
 
 | 模块 | 状态 | 备注 |
 |---|---|---|
-| VRM → RealityKit 资产管线 | ✅ 实测跑通 | Blender USD 导出不写法线 → pxr 按位置焊接注入;metallic=1 修复;布料缓存 `*_0_0` 去重;`usdzip --arkitAsset` 内嵌贴图 |
-| blendshape 脸通道 | ✅ 实测跑通 | **根因是 UsdSkel 平行数组错位**(92 名 vs 91 目标,index 77 起错位 → 整绑定判废);按规范逆向定位、重写 `skel:blendShapes` 后 52 维表情可代码驱动 |
-| cel 卡通着色 | ❌ 4 次尝试全败 | RealityKit 26.5 MaterialX 贴图采样墙(与接不接 UV 无关);当前 flat 兜底,完整死因分析在 build-log |
-| M0 五端口骨架 / M1 最小闭环 | ⬜ 下一步 | loop-first:先全 stub 端到端,再把 stub 逐个换真 |
-| 大脑(LangGraph)/ VLA 微调 | ⬜ 设计定稿未开工 | 契约 A–E 已细化到可开工 |
-| 立项调研 | ✅ 13 篇(2026-06~08) | `research/`,只读存档 |
+| VRM → RealityKit 资产管线 | 已跑通 | Blender USD 导出不写法线 → pxr 按位置焊接注入;metallic=1 修复;布料缓存 `*_0_0` 去重;`usdzip --arkitAsset` 内嵌贴图 |
+| blendshape 脸通道 | 已跑通 | 根因是 UsdSkel 平行数组错位(92 名 vs 91 目标,index 77 起错位 → 整绑定判废);按规范逆向定位、重写 `skel:blendShapes` 后 52 维表情可代码驱动 |
+| cel 卡通着色 | 未实现 | 4 次尝试均卡在 RealityKit 26.5 MaterialX 贴图采样墙(与接不接 UV 无关);当前 flat 兜底,死因分析见构建日志 |
+| M0 五端口骨架 / M1 最小闭环 | 进行中 | loop-first:先全 stub 端到端,再把 stub 逐个换真 |
+| 大脑(LangGraph)/ VLA 微调 | 设计已定稿,未开工 | 契约 A–E 已细化到可开工 |
+| 立项调研 | 已完成 | 13 篇(2026-06~08),`research/`,只读存档 |
 
 > 工程日志(含每个坑的现象→根因→修法→验证)在 `research/phase-a-build-log.md`。
 
